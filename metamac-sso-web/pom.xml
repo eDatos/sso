@@ -2,30 +2,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>metamac-sso</artifactId>
-        <groupId>metamac</groupId>
+        <groupId>org.siemac.metamac</groupId>
+        <artifactId>metamac-sso-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../metamac-sso-parent/pom.xml</relativePath>
     </parent>
+    
     <groupId>metamac-sso-web</groupId>
     <artifactId>metamac-sso-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>SIEMAC :: SSO :: WEB</name>
     <packaging>war</packaging>
-
-    <properties>
-        <cas.version>3.4.11</cas.version>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <version>${servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.1</version>
+            <version>${jsp-api.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -54,7 +53,7 @@
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
-            <version>1.2.1</version>
+            <version>${commons-dbcp.version}</version>
             <scope>runtime</scope>
             <exclusions>
                 <exclusion>
@@ -72,17 +71,15 @@
             </exclusions>
         </dependency>
 
-
-        <!-- TODO -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>3.0.5.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-configuration</groupId>
             <artifactId>commons-configuration</artifactId>
-            <version>1.7</version>
+            <version>${commons-configuration.version}</version>
         </dependency>
 
     </dependencies>
@@ -93,9 +90,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.2</version>
-                <configuration>
-                    <warName>metamac-sso-web</warName>
-                </configuration>
             </plugin>
         </plugins>
     </build>
