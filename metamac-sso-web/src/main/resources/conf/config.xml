@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <override>
+	<system />
+	
+	<!-- STATIC configurations -->
+    <properties fileName="cas.properties" config-optional="false" />
+  	<properties fileName="${environment.metamac.data}/sso/conf/static/cas.xml" config-optional="false" />
+
+  </override>
+</configuration>
