@@ -1,6 +1,7 @@
 package org.siemac.metamac.sso.validation;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.net.ssl.HostnameVerifier;
 
@@ -53,6 +54,7 @@ public class ValidateTicket {
         return encoding;
     }
 
+    @SuppressWarnings("unchecked")
     public MetamacPrincipal validateTicket(String ticket, String service) throws TicketValidationException {
 
         // String disableXmlSchemaValidation = "false";
@@ -71,8 +73,14 @@ public class ValidateTicket {
             }
 
             AttributePrincipal attributePrincipal = assertion.getPrincipal();
-            @SuppressWarnings("unchecked")
-            List<String> acls = (List<String>) attributePrincipal.getAttributes().get(ValidateTicket.PROP_ATTRIBUTE_ACL); // TODO
+            Object object = attributePrincipal.getAttributes().get(ValidateTicket.PROP_ATTRIBUTE_ACL); // TODO Externalizar PROP_ATTRIBUTE_ACL
+            Collection<String> acls = null;
+            if (object instanceof Collection<?>) {
+                acls = (Collection<String>) object;
+            } else {
+                acls = new ArrayList<String>();
+                acls.add(object.toString());
+            }
 
             MetamacPrincipal metamacPrincipal = new MetamacPrincipal();
             metamacPrincipal.setUserId(assertion.getPrincipal().getName());
