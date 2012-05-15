@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Security Configuration</comment>
+    
+    <!-- URL de conexión a la basse de datos de control de acceso -->
+	<entry key="metamac.security.datasource.url">jdbc:oracle:thin:@HOST:PORT:XE</entry>
+    
+    <!-- Usuario y password para realizar la conexión a la BBDD -->
+    <entry key="metamac.security.datasource.username">DB_USER</entry>
+    <entry key="metamac.security.datasource.password">DB_PASSWORD</entry>
+
+    <!-- URL del Directori LDAP a usar para realizar la autenticación de los usuarios -->
+    <entry key="metamac.security.ldap.url">ldap://ldap-pre.arte-consultores.com</entry>
+    
+    <!-- DN del usuario que tiene permisos para realizar consoultas en el directorio LDAP -->
+    <entry key="metamac.security.ldap.userDn">cn=admin,dc=arte-consultores,dc=com</entry>
+    
+    <!-- Password del usuario que tiene permisos para realizar consoultas en el directorio LDAP -->
+    <entry key="metamac.security.ldap.password">arte42</entry>
+    
+    <!-- Filtro a usar en la consulta de usuarios -->
+    <entry key="metamac.security.ldap.filter">uid=%u</entry>
+    
+    <!-- DN base bajo el cual se encuentran dados de alta los usuarios en el directorio LDAP -->
+    <entry key="metamac.security.ldap.searchBase">ou=users,dc=arte-consultores,dc=com</entry>
+    
+</properties>
