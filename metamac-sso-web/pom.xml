@@ -4,13 +4,12 @@
     <parent>
         <groupId>org.siemac.metamac</groupId>
         <artifactId>metamac-sso-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
         <relativePath>../metamac-sso-parent/pom.xml</relativePath>
     </parent>
     
-    <groupId>metamac-sso-web</groupId>
+    <groupId>org.siemac.metamac</groupId>
     <artifactId>metamac-sso-web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>SIEMAC :: SSO :: WEB</name>
     <packaging>war</packaging>
 
