@@ -11,10 +11,17 @@
     <artifactId>metamac-sso</artifactId>
     <name>SIEMAC :: SSO</name>
     <packaging>pom</packaging>
-    
+
+    <scm>
+        <connection>scm:svn:svn://svn.arte-consultores.com/istac/metamac/metamac-sso/trunk</connection>
+        <developerConnection>scm:svn:svn://svn.arte-consultores.com/istac/metamac/metamac-sso/trunk</developerConnection>
+        <url>scm:svn:svn://svn.arte-consultores.com/istac/metamac/metamac-sso/trunk</url>
+    </scm>
+
+
     <modules>
         <module>metamac-sso-parent</module>
         <module>metamac-sso-client</module>
-        <module>metamac-sso-web</module>        
+        <module>metamac-sso-web</module>
     </modules>
 </project>
