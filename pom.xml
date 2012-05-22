@@ -13,9 +13,9 @@
     <packaging>pom</packaging>
 
     <scm>
-        <connection>scm:svn:svn://svn.arte-consultores.com/istac/metamac/metamac-sso/trunk</connection>
-        <developerConnection>scm:svn:svn://svn.arte-consultores.com/istac/metamac/metamac-sso/trunk</developerConnection>
-        <url>scm:svn:svn://svn.arte-consultores.com/istac/metamac/metamac-sso/trunk</url>
+        <connection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-sso/trunk/</connection>
+        <developerConnection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-sso/trunk/</developerConnection>
+        <url>http://svn.arte-consultores.com/viewvc/arte/istac/metamac/metamac-sso/trunk/</url>
     </scm>
 
 
