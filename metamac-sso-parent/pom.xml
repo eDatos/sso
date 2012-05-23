@@ -9,7 +9,7 @@
         <relativePath>../metamac-parent/pom.xml</relativePath>
     </parent>
     
-    <groupId>org.siemac.metamac</groupId>
+    <groupId>org.siemac.metamac.metamac-sso</groupId>
     <artifactId>metamac-sso-parent</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <name>SIEMAC :: SSO :: PARENT</name>

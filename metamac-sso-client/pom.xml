@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.siemac.metamac</groupId>
+        <groupId>org.siemac.metamac.metamac-sso</groupId>
         <artifactId>metamac-sso-parent</artifactId>
         <version>1.0.1-SNAPSHOT</version>
         <relativePath>../metamac-sso-parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>org.siemac.metamac</groupId>
+    <groupId>org.siemac.metamac.metamac-sso</groupId>
     <artifactId>metamac-sso-client</artifactId>
     <name>SIEMAC :: SSO :: CLIENT</name>
     <packaging>jar</packaging>
