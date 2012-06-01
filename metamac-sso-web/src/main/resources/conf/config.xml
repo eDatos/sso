@@ -7,7 +7,7 @@
 	
 	<!-- STATIC configurations -->
     <properties fileName="cas.properties" config-optional="false" />
-  	<properties fileName="${environment.metamac.data}/sso/conf/static/cas.xml" config-optional="false" />
+  	<properties fileName="${environment.metamac.data}/sso/conf/static/cas.xml" basePath="" config-optional="false" />
 
   </override>
 </configuration>
