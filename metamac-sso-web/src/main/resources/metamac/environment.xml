@@ -2,5 +2,5 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
   <comment>Metamac environment definition</comment>
-  <entry key="environment.metamac.data">/data/istac/metamac</entry>
+  <entry key="environment.metamac.data">/data/metamac</entry>
 </properties>
