@@ -1,4 +1,4 @@
-package org.siemac.metamac.statistical.resources.core.security;
+package org.siemac.metamac.sso.utils;
 
 import org.fornax.cartridges.sculptor.framework.errorhandling.ServiceContext;
 import org.siemac.metamac.core.common.exception.MetamacException;
