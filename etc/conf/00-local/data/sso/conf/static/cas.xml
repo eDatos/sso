@@ -1,28 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<comment>Security Configuration</comment>
-    
-    <!-- URL de conexión a la basse de datos de control de acceso -->
-	<entry key="metamac.security.datasource.url">jdbc:oracle:thin:@HOST:PORT:XE</entry>
-    
-    <!-- Usuario y password para realizar la conexión a la BBDD -->
+    <comment>Security Configuration</comment>
+
+    <!-- Datos de conexión a la basse de datos de control de acceso -->
+    <!-- ORACLE -->
+    <entry key="metamac.security.datasource.url">jdbc:oracle:thin:@HOST:PORT:XE</entry>
     <entry key="metamac.security.datasource.username">DB_USER</entry>
     <entry key="metamac.security.datasource.password">DB_PASSWORD</entry>
+    <entry key="metamac.security.datasource.driverName">oracle.jdbc.driver.OracleDriver</entry>
+    <!-- MS SQL -->
+    <!-- 
+    <entry key="metamac.security.datasource.url">jdbc:sqlserver://HOST:PORT;databaseName=DATABASE_NAME</entry>
+    <entry key="metamac.security.datasource.username">DB_USER</entry>
+    <entry key="metamac.security.datasource.password">DB_PASSWORD</entry>
+    <entry key="metamac.security.datasource.driverName">com.microsoft.sqlserver.jdbc.SQLServerDriver</entry>
+    -->
 
     <!-- URL del Directori LDAP a usar para realizar la autenticación de los usuarios -->
     <entry key="metamac.security.ldap.url">ldap://ldap-pre.arte-consultores.com</entry>
-    
+
     <!-- DN del usuario que tiene permisos para realizar consoultas en el directorio LDAP -->
     <entry key="metamac.security.ldap.userDn">cn=admin,dc=arte-consultores,dc=com</entry>
-    
+
     <!-- Password del usuario que tiene permisos para realizar consoultas en el directorio LDAP -->
     <entry key="metamac.security.ldap.password">arte42</entry>
-    
+
     <!-- Filtro a usar en la consulta de usuarios -->
     <entry key="metamac.security.ldap.filter">uid=%u</entry>
-    
+
     <!-- DN base bajo el cual se encuentran dados de alta los usuarios en el directorio LDAP -->
     <entry key="metamac.security.ldap.searchBase">ou=users,dc=arte-consultores,dc=com</entry>
-    
+
+    <!-- Query para ORACLE -->
+    <entry key="metamac.security.datasource.query.attributes"><![CDATA[
+        SELECT usr.username as username, 'ACL' as acl_name,  app.code || '#' || rol.code || '#' || operations.code as acl_value
+        FROM TB_ACCESS acc
+        LEFT JOIN TB_USERS usr ON acc.USER_FK = usr.ID
+        LEFT JOIN TB_ROLES rol ON acc.ROLE_FK = rol.ID
+        LEFT JOIN TB_APPS app ON acc.APP_FK = app.ID
+        LEFT JOIN TB_EXTERNAL_ITEMS operations ON acc.OPERATION_FK = operations.ID
+        WHERE {0}
+    ]]></entry>
+
+    <!-- QUERY para MS SQL -->
+    <!--
+        <entry key="metamac.security.datasource.query.attributes"><![CDATA[
+        SELECT usr.username as username, 'ACL' as acl_name, ISNULL(app.code, '') + '#' + ISNULL(rol.code, '') + '#' + ISNULL(operations.code, '') as acl_value
+        FROM TB_ACCESS acc
+        LEFT JOIN TB_USERS usr ON acc.USER_FK = usr.ID
+        LEFT JOIN TB_ROLES rol ON acc.ROLE_FK = rol.ID
+        LEFT JOIN TB_APPS app ON acc.APP_FK = app.ID
+        LEFT JOIN TB_EXTERNAL_ITEMS operations ON acc.OPERATION_FK = operations.ID
+        WHERE {0}
+        ]]></entry>
+    -->
+
 </properties>

@@ -53,15 +53,7 @@
     <bean id="attributeRepository" class="org.jasig.services.persondir.support.jdbc.MultiRowJdbcPersonAttributeDao">
         <constructor-arg index="0" ref="dataSource" />
         <constructor-arg index="1">
-            <value>      
-                SELECT usr.username as username, 'ACL' as acl_name,  app.code || '#' || rol.code || '#' || operations.code as acl_value
-                FROM TB_ACCESS acc
-                LEFT JOIN TB_USERS usr ON acc.USER_FK = usr.ID
-                LEFT JOIN TB_ROLES rol ON acc.ROLE_FK = rol.ID
-                LEFT JOIN TB_APPS app ON acc.APP_FK = app.ID
-                LEFT JOIN TB_EXTERNAL_ITEMS operations ON acc.OPERATION_FK = operations.ID
-                WHERE {0}
-            </value>
+            <value>${metamac.security.datasource.query.attributes}</value>
         </constructor-arg>
         <property name="nameValueColumnMappings">
             <map>
@@ -144,7 +136,7 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName">
-            <value>oracle.jdbc.driver.OracleDriver</value>
+            <value>${metamac.security.datasource.driverName}</value>
         </property>
         <property name="url">
             <value>${metamac.security.datasource.url}</value>
