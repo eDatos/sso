@@ -40,7 +40,7 @@
         LEFT JOIN TB_ROLES rol ON acc.ROLE_FK = rol.ID
         LEFT JOIN TB_APPS app ON acc.APP_FK = app.ID
         LEFT JOIN TB_EXTERNAL_ITEMS operations ON acc.OPERATION_FK = operations.ID
-        WHERE {0}
+        WHERE REMOVAL_DATE IS NULL AND {0}
     ]]></entry>
 
     <!-- QUERY para MS SQL -->
@@ -52,7 +52,7 @@
         LEFT JOIN TB_ROLES rol ON acc.ROLE_FK = rol.ID
         LEFT JOIN TB_APPS app ON acc.APP_FK = app.ID
         LEFT JOIN TB_EXTERNAL_ITEMS operations ON acc.OPERATION_FK = operations.ID
-        WHERE {0}
+        WHERE REMOVAL_DATE IS NULL AND {0}
         ]]></entry>
     -->
 
