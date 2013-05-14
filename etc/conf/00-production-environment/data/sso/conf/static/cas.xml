@@ -3,36 +3,39 @@
 <properties>
     <comment>Security Configuration</comment>
 
-    <!-- Datos de conexión a la basse de datos de control de acceso -->
+    <!-- Database conection -->
     <!-- ORACLE -->
-    <entry key="metamac.security.datasource.url">jdbc:oracle:thin:@HOST:PORT:XE</entry>
-    <entry key="metamac.security.datasource.username">DB_USER</entry>
-    <entry key="metamac.security.datasource.password">DB_PASSWORD</entry>
+    <entry key="metamac.security.datasource.url">jdbc:oracle:thin:@FILL_ME_WITH_HOST:FILL_ME_WITH_PORT:XE</entry>
+    <entry key="metamac.security.datasource.username">FILL_ME_WITH_DB_USER</entry>
+    <entry key="metamac.security.datasource.password">FILL_ME_WITH_DB_PASSWORD</entry>
     <entry key="metamac.security.datasource.driverName">oracle.jdbc.driver.OracleDriver</entry>
     <!-- MS SQL -->
     <!-- 
-    <entry key="metamac.security.datasource.url">jdbc:sqlserver://HOST:PORT;databaseName=DATABASE_NAME</entry>
-    <entry key="metamac.security.datasource.username">DB_USER</entry>
-    <entry key="metamac.security.datasource.password">DB_PASSWORD</entry>
+    <entry key="metamac.security.datasource.url">jdbc:sqlserver://FILL_ME_WITH_HOST:FILL_ME_WITH_PORT;databaseName=DATABASE_NAME</entry>
+    <entry key="metamac.security.datasource.username">FILL_ME_WITH_DB_USER</entry>
+    <entry key="metamac.security.datasource.password">FILL_ME_WITH_DB_PASSWORD</entry>
     <entry key="metamac.security.datasource.driverName">com.microsoft.sqlserver.jdbc.SQLServerDriver</entry>
     -->
 
-    <!-- URL del Directori LDAP a usar para realizar la autenticación de los usuarios -->
-    <entry key="metamac.security.ldap.url">ldap://ldap-pre.arte-consultores.com</entry>
+    <!-- URL LDAP Directory -->
+    <entry key="metamac.security.ldap.url">FILL_ME_WITH_LDAP_URL</entry>
 
-    <!-- DN del usuario que tiene permisos para realizar consoultas en el directorio LDAP -->
-    <entry key="metamac.security.ldap.userDn">cn=admin,dc=arte-consultores,dc=com</entry>
+    <!-- DN user to execute queries in LDAP Directory -->
+    <!-- Sample: cn=admin,dc=mycompany,dc=com -->
+    <entry key="metamac.security.ldap.userDn">FILL_ME_WITH_DN_USER</entry>
 
-    <!-- Password del usuario que tiene permisos para realizar consoultas en el directorio LDAP -->
-    <entry key="metamac.security.ldap.password">arte42</entry>
+    <!-- Password of user than can execute queries in LDAP Directory -->
+    <entry key="metamac.security.ldap.password">FILL_ME_WITH_USER_PASSWORD</entry>
 
-    <!-- Filtro a usar en la consulta de usuarios -->
-    <entry key="metamac.security.ldap.filter">uid=%u</entry>
+    <!-- Filter to execute queries to restrieve users -->
+    <!-- Sample: uid=%u -->
+    <entry key="metamac.security.ldap.filter">FILL_ME_WITH_USER_QUERY</entry>
 
-    <!-- DN base bajo el cual se encuentran dados de alta los usuarios en el directorio LDAP -->
-    <entry key="metamac.security.ldap.searchBase">ou=users,dc=arte-consultores,dc=com</entry>
+    <!-- DN base where users are located in LDAP Directory -->
+    <!-- Sample: ou=users,dc=mycompany,dc=com -->
+    <entry key="metamac.security.ldap.searchBase"></entry>
 
-    <!-- Query para ORACLE -->
+    <!-- Query ORACLE -->
     <entry key="metamac.security.datasource.query.attributes"><![CDATA[
         SELECT usr.username as username, 'ACL' as acl_name,  app.code || '#' || rol.code || '#' || operations.code as acl_value
         FROM TB_ACCESS acc
@@ -43,7 +46,7 @@
         WHERE REMOVAL_DATE IS NULL AND {0}
     ]]></entry>
 
-    <!-- QUERY para MS SQL -->
+    <!-- QUERY MS SQL -->
     <!--
         <entry key="metamac.security.datasource.query.attributes"><![CDATA[
         SELECT usr.username as username, 'ACL' as acl_name, ISNULL(app.code, '') + '#' + ISNULL(rol.code, '') + '#' + ISNULL(operations.code, '') as acl_value
