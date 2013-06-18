@@ -4,10 +4,8 @@ import java.io.Serializable;
 
 public class MetamacPrincipalAccess implements Serializable {
 
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -5049583473275224276L;
+    
     private String            role;
     private String            application;
     private String            operation;

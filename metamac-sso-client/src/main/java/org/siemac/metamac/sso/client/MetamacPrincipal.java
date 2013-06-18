@@ -6,10 +6,8 @@ import java.util.List;
 
 public class MetamacPrincipal implements Serializable {
 
-    /**
-     * 
-     */
-    private static final long            serialVersionUID = 1L;
+    private static final long serialVersionUID = -4106261968611466871L;
+    
     private String                       userId;
     private List<MetamacPrincipalAccess> accesses;
 

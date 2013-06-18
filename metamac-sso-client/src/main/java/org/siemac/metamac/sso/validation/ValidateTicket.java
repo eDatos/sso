@@ -75,11 +75,13 @@ public class ValidateTicket {
             AttributePrincipal attributePrincipal = assertion.getPrincipal();
             Object object = attributePrincipal.getAttributes().get(ValidateTicket.PROP_ATTRIBUTE_ACL); // TODO Externalizar PROP_ATTRIBUTE_ACL
             Collection<String> acls = null;
-            if (object instanceof Collection<?>) {
-                acls = (Collection<String>) object;
-            } else {
-                acls = new ArrayList<String>();
-                acls.add(object.toString());
+            if (object != null) {
+                if (object instanceof Collection<?>) {
+                    acls = (Collection<String>) object;
+                } else {
+                    acls = new ArrayList<String>();
+                    acls.add(object.toString());
+                }
             }
 
             MetamacPrincipal metamacPrincipal = new MetamacPrincipal();

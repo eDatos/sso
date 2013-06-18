@@ -8,7 +8,7 @@
     
         <property name="credentialsToPrincipalResolvers">
             <list>
-                <bean class="org.jasig.cas.authentication.principal.UsernamePasswordCredentialsToPrincipalResolver">
+                <bean class="org.siemac.metamac.cas.authentication.principal.MetamacUsernamePasswordCredentialsToPrincipalResolver">
                     <property name="attributeRepository" ref="attributeRepository" />
                 </bean>
                 
