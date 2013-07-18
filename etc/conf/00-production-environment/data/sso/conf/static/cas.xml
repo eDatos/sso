@@ -8,13 +8,13 @@
     <entry key="metamac.security.datasource.url">jdbc:oracle:thin:@FILL_ME_WITH_HOST:FILL_ME_WITH_PORT:XE</entry>
     <entry key="metamac.security.datasource.username">FILL_ME_WITH_DB_USER</entry>
     <entry key="metamac.security.datasource.password">FILL_ME_WITH_DB_PASSWORD</entry>
-    <entry key="metamac.security.datasource.driverName">oracle.jdbc.driver.OracleDriver</entry>
+    <entry key="metamac.security.datasource.driver_name">oracle.jdbc.driver.OracleDriver</entry>
     <!-- MS SQL -->
     <!-- 
     <entry key="metamac.security.datasource.url">jdbc:sqlserver://FILL_ME_WITH_HOST:FILL_ME_WITH_PORT;databaseName=DATABASE_NAME</entry>
     <entry key="metamac.security.datasource.username">FILL_ME_WITH_DB_USER</entry>
     <entry key="metamac.security.datasource.password">FILL_ME_WITH_DB_PASSWORD</entry>
-    <entry key="metamac.security.datasource.driverName">com.microsoft.sqlserver.jdbc.SQLServerDriver</entry>
+    <entry key="metamac.security.datasource.driver_name">com.microsoft.sqlserver.jdbc.SQLServerDriver</entry>
     -->
 
     <!-- URL LDAP Directory -->
@@ -22,7 +22,7 @@
 
     <!-- DN user to execute queries in LDAP Directory -->
     <!-- Sample: cn=admin,dc=mycompany,dc=com -->
-    <entry key="metamac.security.ldap.userDn">FILL_ME_WITH_DN_USER</entry>
+    <entry key="metamac.security.ldap.user_dn">FILL_ME_WITH_DN_USER</entry>
 
     <!-- Password of user than can execute queries in LDAP Directory -->
     <entry key="metamac.security.ldap.password">FILL_ME_WITH_USER_PASSWORD</entry>
@@ -33,7 +33,7 @@
 
     <!-- DN base where users are located in LDAP Directory -->
     <!-- Sample: ou=users,dc=mycompany,dc=com -->
-    <entry key="metamac.security.ldap.searchBase"></entry>
+    <entry key="metamac.security.ldap.search_base"></entry>
 
     <!-- Query ORACLE -->
     <entry key="metamac.security.datasource.query.attributes"><![CDATA[

@@ -27,7 +27,7 @@
                 
                 <bean class="org.jasig.cas.adaptors.ldap.BindLdapAuthenticationHandler" 
                       p:filter="${metamac.security.ldap.filter}"
-                      p:searchBase="${metamac.security.ldap.searchBase}"
+                      p:searchBase="${metamac.security.ldap.search_base}"
                       p:contextSource-ref="contextSource" />
             </list>
         </property>
@@ -136,7 +136,7 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName">
-            <value>${metamac.security.datasource.driverName}</value>
+            <value>${metamac.security.datasource.driver_name}</value>
         </property>
         <property name="url">
             <value>${metamac.security.datasource.url}</value>
@@ -161,7 +161,7 @@
 
         <!-- Manager credentials are only required if your directory does not support anonymous searches. Never provide these credentials for FastBindLdapAuthenticationHandler 
             since the user's credentials are used for the bind operation. -->
-        <property name="userDn" value="${metamac.security.ldap.userDn}" />
+        <property name="userDn" value="${metamac.security.ldap.user_dn}" />
         <property name="password" value="${metamac.security.ldap.password}" />
 
         <!-- Place JNDI environment properties here. -->
