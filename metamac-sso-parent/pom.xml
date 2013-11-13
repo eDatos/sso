@@ -21,6 +21,6 @@
     </issueManagement>
 
     <properties>
-        <metamac-core-common.version>1.6.0</metamac-core-common.version>
+        <metamac-core-common.version>1.7.1-SNAPSHOT</metamac-core-common.version>
     </properties>
 </project>
