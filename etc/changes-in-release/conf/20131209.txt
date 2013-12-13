@@ -1,0 +1,3 @@
+Las configuraciones pasan a estar en base de datos:
+
+Desaparece este directorio.

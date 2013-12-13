@@ -2,11 +2,12 @@ Cuando se cree la RELEASE, añadir estos pasos al manual de instalación:
 
 1. Parar Tomcat
 
-2. DATA
+2. Cambios en BBDD: Ver subcarpeta /db
+	- Es necesario ejecutar los scripts de inserts de la configuración del DATA
+	
+3. Cambios en data: Ver subcarpeta /conf
+	- Desaparece el directorio DATA al completo
+	- Las propiedades del DATA pasan a estar en BBDD.
 
-	- Refactor de propiedades
-		- metamac.security.casServiceLoginUrl por metamac.security.cas_service_login_url
-		- metamac.security.casServiceLogoutUrl por metamac.security.cas_service_logout_url
-		- metamac.security.casServerUrlPrefix por metamac.security.cas_server_url_prefix
 
 99. Reiniciar Tomcat
