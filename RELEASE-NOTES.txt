@@ -1,0 +1,64 @@
+========================================================================
+METAMAC-SSO -- Servicio de Autenticación
+========================================================================
+
+Servicio centralizado de autenticación que se encarga de llevar a cabo
+las acciones de signin y signout de los aplicativos.
+
+Por favor, consulta nuestro gestor de incidencia para obtener más información
+de las incidencias con el id [METAMAC-xxx].
+http://jira.arte-consultores.com/browse/METAMAC
+
+------------------------------------------------------------------------------
+Release 1.4.0
+------------------------------------------------------------------------------
+
+Notas de publicación - Metamac - hito metamac-sso - 1.4.0
+
+** Defecto
+    * [METAMAC-1526] - La consulta SQL que obtiene los accesos de un usuario incluye los accesos borrados
+    * [METAMAC-1737] - Las redirecciones hechas cuando hay seguridad con el ticket, hace que se pierdan los enlaces a secciones y hace un número de refrescos de página excesivos
+    * [METAMAC-1748] - Corregir problemas que se producen al hacer login en el sso y obtener los accesos.
+    * [METAMAC-1766] - Los logs se están ubicando en la raíz del Tomcat. Ubicarlos en /logs
+
+------------------------------------------------------------------------------
+Release 1.3.0
+------------------------------------------------------------------------------
+
+Notas de publicación - Metamac - hito metamac-sso - 1.3.0
+
+** Mejora
+    * [METAMAC-1339] - Crear clase de utilidades que permita obtener el MetamacPrincipal y lanzar una excepción si una operación no está permitida
+
+** Tarea
+    * [METAMAC-1354] - Soporte para SQL Server
+
+------------------------------------------------------------------------------
+Release 1.2.0
+------------------------------------------------------------------------------
+
+Notas de publicación - Metamac - hito metamac-sso - 1.2.0
+
+** Soporte
+    * [METAMAC-1113] - Cambio en la configuración de Maven: uniqueVersion
+
+------------------------------------------------------------------------------
+Release 1.1.0
+------------------------------------------------------------------------------
+
+Notas de publicación - Metamac - hito metamac-sso - 1.1.0
+
+
+** Tarea
+    * [METAMAC-570] - Refactor en groupId de proyectos multimódulo
+
+------------------------------------------------------------------------------
+Release 1.0.0
+------------------------------------------------------------------------------
+
+Notas de publicación - Metamac - hito metamac-sso - 1.0.0
+
+** Tarea
+    * [METAMAC-473] - Crear proyecto metamac-sso-client
+    * [METAMAC-499] - Integración del SSO en metamac-access-control
+    * [METAMAC-503] - Configurar CAS para que saque los roles de la BBDD de control de acceso
