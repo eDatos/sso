@@ -19,11 +19,15 @@ import org.apache.commons.configuration.SystemConfiguration;
 import org.apache.commons.configuration.XMLPropertiesConfiguration;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 public class ConfigurationServiceImpl implements InitializingBean, ConfigurationService {
+
+    private static final Logger     LOG                                = LoggerFactory.getLogger(ConfigurationServiceImpl.class);
 
     private static final String     TABLE_CONFIGURATIONS_NAME          = "TB_DATA_CONFIGURATIONS";
     private static final String     TABLE_CONFIGURATIONS_COLUMN_KEY    = "CONF_KEY";
@@ -95,6 +99,7 @@ public class ConfigurationServiceImpl implements InitializingBean, Configuration
     }
 
     private void initConfigurationInFiles() {
+        LOG.info("Loading configuration properties from files");
         try {
             if (configurationFile == null) {
                 configurationFile = new ClassPathResource("conf/config.xml");
@@ -111,6 +116,7 @@ public class ConfigurationServiceImpl implements InitializingBean, Configuration
     }
 
     private void initConfigurationInDatabase() {
+        LOG.info("Loading configuration properties from database");
         try {
             // Setup Datasource
             configurationsDatasource = new BasicDataSource();
