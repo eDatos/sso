@@ -2,6 +2,7 @@ package org.siemac.metamac.cas.conf;
 
 import java.util.Properties;
 
+import org.siemac.metamac.core.common.conf.ConfigurationService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
@@ -14,6 +15,7 @@ public class ConfigurationServicePropertyPlaceholderConfigurer extends PropertyP
         this.configurationService = configurationService;
     }
 
+    @Override
     public void afterPropertiesSet() throws Exception {
         if (configurationService == null) {
             throw new IllegalArgumentException("Falta la propiedad \"configurationService\"");
