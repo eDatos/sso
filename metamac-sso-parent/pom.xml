@@ -22,5 +22,7 @@
 
     <properties>
         <metamac-core-common.version>1.7.1-SNAPSHOT</metamac-core-common.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
     </properties>
+    
 </project>

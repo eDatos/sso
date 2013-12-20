@@ -10,7 +10,7 @@
 		can be moved between tiers without modification.
 	</description>
     
-    <bean id="configurationService" class="org.siemac.metamac.core.common.conf.ConfigurationServiceImpl">
+    <bean id="configurationService" class="org.siemac.metamac.cas.conf.ConfigurationServiceImpl">
         <property name="systemConfigurationFile"><value>classpath:metamac/environment.xml</value></property>
     </bean>
     
