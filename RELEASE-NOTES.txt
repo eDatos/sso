@@ -10,6 +10,27 @@ de las incidencias con el id [METAMAC-xxx].
 http://jira.arte-consultores.com/browse/METAMAC
 
 ------------------------------------------------------------------------------
+Release 1.5.0
+------------------------------------------------------------------------------
+
+Notas de publicación - Metamac - hito metamac-sso - 1.5.0
+
+** Defecto
+    * [METAMAC-1969] - Configuraciones de aplicaciones en Base de datos en vez de en archivo de propiedades
+
+** Nueva Funcionalidad
+    * [METAMAC-1976] - Posibilidad de setear en la WEB los datos por defecto de data
+
+
+** Soporte
+    * [METAMAC-2003] - Añadir RELEASE-NOTES al proyecto
+
+** Tarea
+    * [METAMAC-2000] - Modificar la estructura changes-in-release de los proyectos
+    * [METAMAC-2020] - Revisar los TODO y FIXME antes de dar por finalizado cada módulo
+
+
+------------------------------------------------------------------------------
 Release 1.4.0
 ------------------------------------------------------------------------------
 
