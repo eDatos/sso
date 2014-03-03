@@ -73,7 +73,7 @@ public class ValidateTicket {
             }
 
             AttributePrincipal attributePrincipal = assertion.getPrincipal();
-            Object object = attributePrincipal.getAttributes().get(ValidateTicket.PROP_ATTRIBUTE_ACL); // TODO Externalizar PROP_ATTRIBUTE_ACL
+            Object object = attributePrincipal.getAttributes().get(ValidateTicket.PROP_ATTRIBUTE_ACL); // TODO Externalizar PROP_ATTRIBUTE_ACL (METAMAC-2075)
             Collection<String> acls = null;
             if (object != null) {
                 if (object instanceof Collection<?>) {
@@ -93,7 +93,7 @@ public class ValidateTicket {
                         log.warn("Ignoring ACL {} because the size is incorrect", acl);
                         continue;
                     }
-                    String application = aclParts[0]; // TODO
+                    String application = aclParts[0]; // TODO (METAMAC-2075)
                     String role = aclParts[1];
                     String operation = null;
                     if (aclParts.length == 3) {
