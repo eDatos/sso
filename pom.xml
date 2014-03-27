@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.siemac.metamac.metamac-sso</groupId>
         <artifactId>metamac-sso-parent</artifactId>
-        <version>1.5.1-SNAPSHOT</version>
+        <version>1.5.1</version>
         <relativePath>metamac-sso-parent/pom.xml</relativePath>
     </parent>
 
@@ -13,9 +13,9 @@
     <packaging>pom</packaging>
 
     <scm>
-        <connection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-sso/trunk/</connection>
-        <developerConnection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-sso/trunk/</developerConnection>
-        <url>http://svn.arte-consultores.com/viewvc/arte/istac/metamac/metamac-sso/trunk/</url>
+        <connection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-sso/tags/20140327-1305-v1.5.1</connection>
+        <developerConnection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-sso/tags/20140327-1305-v1.5.1</developerConnection>
+        <url>http://svn.arte-consultores.com/viewvc/arte/istac/metamac/metamac-sso/tags/20140327-1305-v1.5.1</url>
     </scm>
 
 
