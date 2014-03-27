@@ -10,6 +10,21 @@ de las incidencias con el id [METAMAC-xxx].
 http://jira.arte-consultores.com/browse/METAMAC
 
 ------------------------------------------------------------------------------
+Release 1.5.1
+------------------------------------------------------------------------------
+Notas de publicación - Metamac - Versión sso - 1.5.1
+
+** Error
+    * [METAMAC-2117] - Los manuales tienen los ejemplos de environment.xml incorrecto
+    * [METAMAC-2120] - Corregir error en el valor de las propiedades del datasource en el fichero environment.xml
+
+** Soporte
+    * [METAMAC-2153] - [CORE] Actualizar dependencia de core-common
+
+** Tarea
+    * [METAMAC-2082] - Cambio de los nombres de los war
+
+------------------------------------------------------------------------------
 Release 1.5.0
 ------------------------------------------------------------------------------
 
