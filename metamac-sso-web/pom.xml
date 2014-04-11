@@ -19,6 +19,12 @@
             <artifactId>metamac-core-common</artifactId>
             <version>${metamac-core-common.version}</version>
             <classifier>client</classifier>
+            <exclusions>
+            	<exclusion>
+            		<artifactId>logback-classic</artifactId>
+            		<groupId>ch.qos.logback</groupId>
+            	</exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
