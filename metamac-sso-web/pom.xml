@@ -14,7 +14,12 @@
     <packaging>war</packaging>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.siemac.metamac</groupId>
+            <artifactId>metamac-core-common</artifactId>
+            <version>${metamac-core-common.version}</version>
+            <classifier>client</classifier>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
