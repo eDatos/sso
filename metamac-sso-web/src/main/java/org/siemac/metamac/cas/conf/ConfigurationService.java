@@ -6,8 +6,8 @@ import org.apache.commons.configuration.Configuration;
 
 public interface ConfigurationService {
 
-    public abstract Configuration getConfig();
+    Configuration getConfig();
 
-    public abstract Properties getProperties();
+    Properties getProperties();
 
 }

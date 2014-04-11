@@ -16,15 +16,16 @@ import org.slf4j.LoggerFactory;
 
 public class ValidateTicket {
 
-    private static Logger log                          = LoggerFactory.getLogger(ValidateTicket.class);
-    private static String PROP_ATTRIBUTE_ACL           = "acl";
-    private static String PROP_ATTRIBUTE_ACL_SEPARATOR = "#";
+    private static final Logger LOG                          = LoggerFactory.getLogger(ValidateTicket.class);
+    private static final String PROP_ATTRIBUTE_ACL           = "acl";
+    private static final String PROP_ATTRIBUTE_ACL_SEPARATOR = "#";
 
-    private String        serverUrlPrefix              = null;
+    private String              serverUrlPrefix              = null;
 
-    private long          tolerance                    = 10000L;                                       // ms
-    private boolean       renew                        = false;
-    private String        encoding                     = null;
+    // tolerance in ms
+    private long                tolerance                    = 10000L;
+    private boolean             renew                        = false;
+    private String              encoding                     = null;
 
     public ValidateTicket(String serverUrlPrefix) {
         this.serverUrlPrefix = serverUrlPrefix;
@@ -57,8 +58,7 @@ public class ValidateTicket {
     @SuppressWarnings("unchecked")
     public MetamacPrincipal validateTicket(String ticket, String service) throws TicketValidationException {
 
-        // String disableXmlSchemaValidation = "false";
-        HostnameVerifier hostnameVerifier = null; // getHostnameVerifier(filterConfig)
+        HostnameVerifier hostnameVerifier = null;
         final Saml11TicketValidator ticketValidator = new Saml11TicketValidator(this.serverUrlPrefix);
         ticketValidator.setTolerance(this.tolerance);
         ticketValidator.setRenew(this.renew);
@@ -68,8 +68,8 @@ public class ValidateTicket {
         try {
             final Assertion assertion = ticketValidator.validate(ticket, service);
 
-            if (log.isDebugEnabled()) {
-                log.debug("Successfully authenticated user: " + assertion.getPrincipal().getName());
+            if (LOG.isDebugEnabled()) {
+                LOG.debug("Successfully authenticated user: " + assertion.getPrincipal().getName());
             }
 
             AttributePrincipal attributePrincipal = assertion.getPrincipal();
@@ -90,7 +90,7 @@ public class ValidateTicket {
                 for (String acl : acls) {
                     String[] aclParts = acl.split(ValidateTicket.PROP_ATTRIBUTE_ACL_SEPARATOR);
                     if (aclParts.length != 2 && aclParts.length != 3) {
-                        log.warn("Ignoring ACL {} because the size is incorrect", acl);
+                        LOG.warn("Ignoring ACL {} because the size is incorrect", acl);
                         continue;
                     }
                     String application = aclParts[0]; // TODO (METAMAC-2075)

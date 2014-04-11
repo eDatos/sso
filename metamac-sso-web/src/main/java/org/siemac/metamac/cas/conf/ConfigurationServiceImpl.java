@@ -74,7 +74,7 @@ public class ConfigurationServiceImpl implements InitializingBean, Configuration
             propertiesConfiguration.load(is);
             environmentConfigurationProperties = propertiesConfiguration;
             SystemConfiguration.setSystemProperties(propertiesConfiguration);
-        } catch (Throwable e) {
+        } catch (IllegalStateException e) {
             throw new IllegalStateException("Properties have not been configured", e);
         }
 
@@ -110,7 +110,7 @@ public class ConfigurationServiceImpl implements InitializingBean, Configuration
             CombinedConfiguration conf = (CombinedConfiguration) factory.getConfiguration();
             conf.setForceReloadCheck(true);
             configuration = conf;
-        } catch (Throwable e) {
+        } catch (Exception e) {
             throw new IllegalStateException("Properties have not been configured", e);
         }
     }
@@ -128,7 +128,7 @@ public class ConfigurationServiceImpl implements InitializingBean, Configuration
             databaseConfiguration = new DatabaseConfiguration(configurationsDatasource, TABLE_CONFIGURATIONS_NAME, TABLE_CONFIGURATIONS_COLUMN_KEY, TABLE_CONFIGURATIONS_COLUMN_VALUE);
             databaseConfiguration.isEmpty();
             configuration = databaseConfiguration;
-        } catch (Throwable e) {
+        } catch (IllegalStateException e) {
             throw new IllegalStateException("Properties have not been configured", e);
         }
     }
@@ -140,7 +140,8 @@ public class ConfigurationServiceImpl implements InitializingBean, Configuration
             if (file.exists()) {
                 return new FileInputStream(file);
             }
-        } catch (Throwable e) {
+        } catch (Exception e) {
+            LOG.error("Error retrieving local configuration: ", e);
         }
         return null;
     }
