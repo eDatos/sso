@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.siemac.metamac</groupId>
         <artifactId>metamac-parent</artifactId>
-        <version>2.0.0-SNAPSHOT</version>
+        <version>2.0.0</version>
         <relativePath>../metamac-parent/pom.xml</relativePath>
     </parent>
 
@@ -21,7 +21,7 @@
     </issueManagement>
 
     <properties>
-        <metamac-core-common.version>2.0.0-SNAPSHOT</metamac-core-common.version>
+        <metamac-core-common.version>2.0.0</metamac-core-common.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
     </properties>
 </project>
