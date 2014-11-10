@@ -9,7 +9,7 @@
     <!-- Configuration properties in database (ORACLE) -->
     <entry key="environment.metamac.configuration.db.username">FILL_ME_WITH_USERNAME</entry>
     <entry key="environment.metamac.configuration.db.password">FILL_ME_WITH_PASSWORD</entry>
-    <entry key="environment.metamac.configuration.db.url">jdbc:oracle:thin:@FILL_ME_WITH_HOST:FILL_ME_WITH_PORT:XE</entry>
+    <entry key="environment.metamac.configuration.db.url">jdbc:oracle:thin:@FILL_ME_WITH_HOST:FILL_ME_WITH_PORT:FILL_ME_WITH_ORACLE_SID</entry>
     <entry key="environment.metamac.configuration.db.driver_name">oracle.jdbc.OracleDriver</entry>
 
     <!-- Configuration properties in database (MSSQL) -->
