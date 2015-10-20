@@ -10,6 +10,8 @@
 		can be moved between tiers without modification.
 	</description>
     
+    <bean id="contextApplicationContextProvider" class="org.siemac.metamac.core.common.util.ApplicationContextProvider"></bean>
+
     <bean id="configurationService" class="org.siemac.metamac.core.common.conf.ConfigurationServiceImpl">
         <property name="systemConfigurationFile"><value>classpath:metamac/environment.xml</value></property>
     </bean>

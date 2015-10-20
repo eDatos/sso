@@ -1,4 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@page import="org.siemac.metamac.core.common.enume.shared.ApplicationOrganisationEnum"%>
+<%@page import="org.siemac.metamac.core.common.conf.ConfigurationService"%>
 <%@ page session="true" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
@@ -27,12 +29,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	    <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
 	</head>
+	
 	<body id="cas" class="fl-theme-iphone">
     <div class="flc-screenNavigator-view-container">
         <div class="fl-screenNavigator-view">
+       		<% String organisation = ((ConfigurationService)session.getAttribute("configurationService")).retrieveOrganisation(); %>
             <div id="header" class="flc-screenNavigator-navbar fl-navbar fl-table">
-            	<div id="left"></div>
-            	<div id="right"></div>
+            	<% if (ApplicationOrganisationEnum.ISTAC.name().equals(organisation)) { %>
+	            	<div id="istac"></div>
+	            	<div id="edatos"></div>
+            	<% } %>
+            	<% if (ApplicationOrganisationEnum.DREM.name().equals(organisation)) { %>
+	            	<div id="drem"></div>
+            	<% } %>
+            	<% if (ApplicationOrganisationEnum.SREA.name().equals(organisation)) { %>
+	            	<div id="srea"></div>
+            	<% } %>
                 <h1 id="app-name" class="fl-table-cell"></h1>
             </div>
             <div id="content" class="fl-screenNavigator-scroll-container">

@@ -21,7 +21,7 @@
     </issueManagement>
 
     <properties>
-        <metamac-core-common.version>3.0.2</metamac-core-common.version>
+        <metamac-core-common.version>3.0.3-SNAPSHOT</metamac-core-common.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
     </properties>
 </project>
