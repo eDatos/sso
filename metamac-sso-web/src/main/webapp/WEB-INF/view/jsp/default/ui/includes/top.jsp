@@ -10,6 +10,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <spring:theme code="mobile.custom.css.file" var="mobileCss" text="" />
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<% String organisation = ((ConfigurationService)session.getAttribute("configurationService")).retrieveOrganisation(); %>
 	<head>
 	    <title>CAS &#8211; Central Authentication Service</title>
         <c:choose>
@@ -27,13 +28,12 @@
            </c:otherwise>
         </c:choose>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
+	    <link href="<%=org.siemac.metamac.core.common.util.WebFaviconUtils.getFavicon(organisation)%>" rel="shortcut icon"/>
 	</head>
 	
 	<body id="cas" class="fl-theme-iphone">
     <div class="flc-screenNavigator-view-container">
         <div class="fl-screenNavigator-view">
-       		<% String organisation = ((ConfigurationService)session.getAttribute("configurationService")).retrieveOrganisation(); %>
             <div id="header" class="flc-screenNavigator-navbar fl-navbar fl-table">
             	<% if (ApplicationOrganisationEnum.ISTAC.name().equals(organisation)) { %>
 	            	<div id="istac"></div>
