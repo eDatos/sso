@@ -11,7 +11,7 @@
 
     <groupId>org.siemac.metamac.metamac-sso</groupId>
     <artifactId>metamac-sso-parent</artifactId>
-    <version>1.7.3-SNAPSHOT</version> 
+    <version>1.7.3</version> 
     <name>SIEMAC :: SSO :: PARENT</name>
     <packaging>pom</packaging>
 
@@ -24,4 +24,10 @@
         <metamac-core-common.version>4.1.0</metamac-core-common.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
     </properties>
+
+  <scm>
+    <connection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-parent/tags/20160722-1250-v1.7.3/metamac-sso-parent</connection>
+    <developerConnection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-parent/tags/20160722-1250-v1.7.3/metamac-sso-parent</developerConnection>
+    <url>http://svn.arte-consultores.com/viewvc/arte/istac/metamac/metamac-parent/tags/20160722-1250-v1.7.3/metamac-sso-parent</url>
+  </scm>
 </project>
