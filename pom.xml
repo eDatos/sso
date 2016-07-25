@@ -12,10 +12,11 @@
     <name>SIEMAC :: SSO</name>
     <packaging>pom</packaging>
 
-    <scm>
-        <connection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-sso/trunk/</connection>
-        <developerConnection>scm:svn:http://svn.arte-consultores.com/svn/arte/istac/metamac/metamac-sso/trunk/</developerConnection>
-        <url>http://svn.arte-consultores.com/viewvc/arte/istac/metamac/metamac-sso/trunk/</url>
+	<scm>
+        <connection>scm:git:https://git.arte-consultores.com/r/istac/metamac-sso.git</connection>
+        <developerConnection>scm:git:https://git.arte-consultores.com/r/istac/metamac-sso.git</developerConnection>
+        <url>https://git.arte-consultores.com/r/istac/metamac-sso.git</url>
+        <tag>HEAD</tag>
     </scm>
 
 
