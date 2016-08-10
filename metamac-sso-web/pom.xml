@@ -46,6 +46,10 @@
             		<artifactId>hibernate-entitymanager</artifactId>
             		<groupId>org.hibernate</groupId>
             	</exclusion>
+            	<exclusion>
+            	    <groupId>org.slf4j</groupId>
+            	    <artifactId>slf4j-api</artifactId>
+            	</exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -73,6 +77,12 @@
             <artifactId>cas-server-core</artifactId>
             <version>${cas.version}</version>
             <type>jar</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jasig.cas</groupId>
@@ -80,6 +90,12 @@
             <version>${cas.version}</version>
             <type>jar</type>
             <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jasig.cas</groupId>
@@ -87,6 +103,12 @@
             <version>${cas.version}</version>
             <type>jar</type>
             <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -128,23 +150,39 @@
 
     <build>
         <finalName>authentication-service-internal-${project.version}</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<overlays>
-						<overlay>
-							<groupId>org.jasig.cas</groupId>
-							<artifactId>cas-server-webapp</artifactId>
-							 <excludes>
-			                <exclude>WEB-INF/lib/aspectj*.jar</exclude>
-			              </excludes>
-						</overlay>
-					</overlays>
-				</configuration>
-			</plugin>
-		</plugins>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <overlays>
+                        <overlay>
+                            <groupId>org.jasig.cas</groupId>
+                            <artifactId>cas-server-webapp</artifactId>
+                            <excludes>
+                                <exclude>WEB-INF/lib/aspectj*.jar</exclude>
+<!--                                 <exclude>WEB-INF/lib/commons-lang*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/jaxb-impl-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/jcl-over-slf4j-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/jta-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/slf4j-api-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-aop-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-asm-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-beans-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-context-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-core-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-expression-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-jdbc-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-ldap-core-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-orm-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/spring-tx-*.jar</exclude> -->
+<!--                                 <exclude>WEB-INF/lib/slf4j-api-*.jar</exclude> -->
+                            </excludes>
+                        </overlay>
+                    </overlays>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
