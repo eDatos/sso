@@ -51,6 +51,10 @@
             		<artifactId>hibernate-entitymanager</artifactId>
             		<groupId>org.hibernate</groupId>
             	</exclusion>
+            	<exclusion>
+            	    <groupId>org.slf4j</groupId>
+            	    <artifactId>log4j-over-slf4j</artifactId>
+            	</exclusion>
             </exclusions>
         </dependency>
         <dependency>
