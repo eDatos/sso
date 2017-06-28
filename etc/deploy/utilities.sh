@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 info() {
     echo "[ INFO  ] `date +'%Y/%m/%d %H:%M:%S'` -> $*"
 }
