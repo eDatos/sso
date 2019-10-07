@@ -3,10 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd ">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apereo.cas</groupId>
-    <artifactId>cas-overlay</artifactId>
+    
+    <parent>
+        <groupId>org.siemac.metamac.metamac-sso</groupId>
+        <artifactId>metamac-sso-parent</artifactId>
+        <version>2.2.2-SNAPSHOT</version>
+        <relativePath>../metamac-sso-parent/pom.xml</relativePath>
+    </parent>
+
+    <groupId>org.siemac.metamac.metamac-sso</groupId>
+    <artifactId>metamac-sso-web-5_3</artifactId>
+    <name>SIEMAC :: SSO :: WEB :: 5.3</name>
     <packaging>war</packaging>
-    <version>1.0</version>
 
     <build>
         <plugins>
