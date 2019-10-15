@@ -12,8 +12,8 @@
     </parent>
 
     <groupId>org.siemac.metamac.metamac-sso</groupId>
-    <artifactId>metamac-sso-web-5_3</artifactId>
-    <name>SIEMAC :: SSO :: WEB :: 5.3</name>
+    <artifactId>metamac-sso-web</artifactId>
+    <name>SIEMAC :: SSO :: WEB</name>
     <packaging>war</packaging>
 
     <build>
