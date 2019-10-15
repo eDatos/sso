@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.siemac.metamac</groupId>
         <artifactId>metamac-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.3-SNAPSHOT</version>
         <relativePath>../metamac-parent/pom.xml</relativePath>
     </parent>
 
@@ -24,4 +24,16 @@
         <metamac-core-common.version>5.5.0</metamac-core-common.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
     </properties>
+        
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-support-bom</artifactId>
+                <version>${cas.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

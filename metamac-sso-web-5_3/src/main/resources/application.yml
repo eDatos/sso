@@ -1,0 +1,34 @@
+# https://apereo.github.io/cas/5.3.x/installation/Configuration-Server-Management.html#standalone
+
+cas.server.name: metamac-sso-web
+cas.server.prefix: ${metamac.security.cas_server_url_prefix}
+
+# Registro de servicios
+# https://apereo.github.io/cas/5.3.x/installation/AutoInitialization-Service-Management.html#service-registry-initialization
+cas.serviceRegistry.json.location: classpath:/services/custom
+
+# Resolucion de atributos
+# https://apereo.github.io/cas/5.3.x/integration/Attribute-Resolution.html#multi-row
+cas.authn.attributeRepository.jdbc[0].singleRow: false
+cas.authn.attributeRepository.jdbc[0].columnMappings.acl_name: acl_value
+cas.authn.attributeRepository.jdbc[0].username: username
+cas.authn.attributeRepository.jdbc[0].sql: ${metamac.security.datasource.query.attributes}
+cas.authn.attributeRepository.jdbc[0].user: ${metamac.security.datasource.username}
+cas.authn.attributeRepository.jdbc[0].password: ${metamac.security.datasource.password}
+cas.authn.attributeRepository.jdbc[0].driverClass: ${metamac.security.datasource.driver_name}
+cas.authn.attributeRepository.jdbc[0].url: ${metamac.security.datasource.url}
+cas.authn.attributeRepository.jdbc[0].dialect: ${metamac.security.datasource.dialect}
+
+# Autenticacion delegada
+# https://apereo.github.io/cas/5.3.x/integration/Delegate-Authentication.html
+cas.authn.pac4j.cas[0].loginUrl: ${metamac.security.delegated.login_url}
+cas.authn.pac4j.cas[0].autoRedirect: true
+cas.authn.pac4j.cas[0].clientName: CAS Delegado
+
+# Desactivados los usuarios estaticos
+# https://apereo.github.io/cas/5.3.x/installation/Configuration-Properties.html#accept-users-authentication
+cas.authn.accept.users: 
+
+# Tiempo de expiraci�n del ticket
+# https://apereo.github.io/cas/5.0.x/installation/Configuration-Properties.html#service-ticket
+cas.ticket.st.timeToKillInSeconds: 60

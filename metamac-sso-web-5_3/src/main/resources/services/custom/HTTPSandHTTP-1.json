@@ -1,0 +1,22 @@
+{
+  "@class" : "org.jasig.cas.services.RegexRegisteredService",
+  "serviceId" : "^(http|https)://.*",
+  "name" : "Servicios HTTP/HTTPS",
+  "id" : 1,
+  "description" : "Este servicio autoriza todas las URL de aplicaciones que usen los protocolos HTTP y HTTPS.",
+  "evaluationOrder" : 10,
+  "attributeReleasePolicy" : {
+    "@class" : "org.jasig.cas.services.ReturnAllowedAttributeReleasePolicy",
+    "principalAttributesRepository" : {
+      "@class" : "org.jasig.cas.authentication.principal.DefaultPrincipalAttributesRepository"
+    },
+    "authorizedToReleaseCredentialPassword" : false,
+    "authorizedToReleaseProxyGrantingTicket" : false,
+    "allowedAttributes" : [ "java.util.ArrayList", [ "acl"] ]
+  },
+  "accessStrategy" : {
+    "@class" : "org.jasig.cas.services.DefaultRegisteredServiceAccessStrategy",
+    "enabled" : true,
+    "ssoEnabled" : true
+  }
+}

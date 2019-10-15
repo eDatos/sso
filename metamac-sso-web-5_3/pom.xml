@@ -60,6 +60,25 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Delegate authentication -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-pac4j-webflow</artifactId>
+        </dependency>
+
+        <!-- Service registry -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-json-service-registry</artifactId>
+        </dependency>
+        
+        
+        <!-- Ticket Validation with SAML -->
+        <dependency>
+          <groupId>org.apereo.cas</groupId>
+          <artifactId>cas-server-support-saml</artifactId>          
+        </dependency>
+        
         <!-- Common Metadata configuration properties -->
         <dependency>
             <groupId>org.siemac.metamac</groupId>
@@ -78,17 +97,4 @@
             </exclusions>
         </dependency>
     </dependencies>
-
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.apereo.cas</groupId>
-                <artifactId>cas-server-support-bom</artifactId>
-                <version>${cas.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-    </dependencies>
-    </dependencyManagement>
 </project>
