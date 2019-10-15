@@ -4,7 +4,7 @@ HOME_PATH=metamac-sso-web
 TRANSFER_PATH=$HOME_PATH/tmp
 DEPLOY_TARGET_PATH=/servers/metamac/tomcats/metamac01/webapps
 ENVIRONMENT_RELATIVE_PATH_FILE=WEB-INF/classes/metamac/environment.xml
-LOGBACK_RELATIVE_PATH_FILE=WEB-INF/classes/log4j.xml
+LOGBACK_RELATIVE_PATH_FILE=WEB-INF/classes/log4j2.xml
 RESTART=1
 
 if [ "$1" == "--no-restart" ]; then
