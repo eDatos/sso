@@ -43,7 +43,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>cas</finalName>
+        <finalName>authentication-service-internal-${project.version}</finalName>
     </build>
 
     <dependencies>
