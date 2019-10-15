@@ -138,3 +138,4 @@ Desktop.ini
 # Bower
 ######################
 **/bower_components/**
+*-LOCAL.xml
