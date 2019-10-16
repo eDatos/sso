@@ -18,7 +18,7 @@ import org.springframework.core.io.ClassPathResource;
 @Configuration
 public class CommonMetadataPropertySourceBootstrapConfiguration implements PropertySourceLocator {
 
-    final static Logger LOGGER = LoggerFactory.getLogger(CommonMetadataPropertySourceBootstrapConfiguration.class);
+    static final Logger LOGGER = LoggerFactory.getLogger(CommonMetadataPropertySourceBootstrapConfiguration.class);
 
     @Bean("configurationService")
     public ConfigurationServiceImpl configurationService() {
