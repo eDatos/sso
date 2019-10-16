@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd ">
     <modelVersion>4.0.0</modelVersion>
+    
     <parent>
         <groupId>org.siemac.metamac.metamac-sso</groupId>
         <artifactId>metamac-sso-parent</artifactId>
@@ -13,103 +16,73 @@
     <name>SIEMAC :: SSO :: WEB</name>
     <packaging>war</packaging>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warName>cas</warName>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <recompressZippedFiles>false</recompressZippedFiles>
+                    <archive>
+                        <compress>false</compress>
+                    </archive>
+                    <overlays>
+                        <overlay>
+                            <groupId>org.apereo.cas</groupId>
+                            <artifactId>cas-server-webapp</artifactId>
+                        </overlay>
+                    </overlays>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <finalName>authentication-service-internal-${project.version}</finalName>
+    </build>
+
     <dependencies>
-    	<dependency>
-		    <groupId>org.aspectj</groupId>
-		    <artifactId>aspectjrt</artifactId>
-		    <version>1.8.9</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.9</version>
-		</dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-webapp</artifactId>
+            <type>war</type>
+            <scope>runtime</scope>
         </dependency>
+
+        <!-- Delegate authentication -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-pac4j-webflow</artifactId>
+        </dependency>
+
+        <!-- Service registry -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-json-service-registry</artifactId>
+        </dependency>
+        
+        
+        <!-- Ticket Validation with SAML -->
+        <dependency>
+          <groupId>org.apereo.cas</groupId>
+          <artifactId>cas-server-support-saml</artifactId>          
+        </dependency>
+        
+        <!-- Common Metadata configuration properties -->
         <dependency>
             <groupId>org.siemac.metamac</groupId>
             <artifactId>metamac-core-common</artifactId>
             <version>${metamac-core-common.version}</version>
             <classifier>client</classifier>
             <exclusions>
-            	<exclusion>
-            		<artifactId>logback-classic</artifactId>
-            		<groupId>ch.qos.logback</groupId>
-            	</exclusion>
-            	<exclusion>
-            		<artifactId>hibernate-core</artifactId>
-            		<groupId>org.hibernate</groupId>
-            	</exclusion>
-            	<exclusion>
-            		<artifactId>persistence-api</artifactId>
-            		<groupId>javax.persistence</groupId>
-            	</exclusion>
-            	<exclusion>
-            		<artifactId>hibernate-entitymanager</artifactId>
-            		<groupId>org.hibernate</groupId>
-            	</exclusion>
-            	<exclusion>
-            	    <groupId>org.slf4j</groupId>
-            	    <artifactId>log4j-over-slf4j</artifactId>
-            	</exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet-api.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>${jsp-api.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jasig.cas</groupId>
-            <artifactId>cas-server-webapp</artifactId>
-            <version>${cas.version}</version>
-            <type>war</type>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jasig.cas</groupId>
-            <artifactId>cas-server-core</artifactId>
-            <version>${cas.version}</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>org.jasig.cas</groupId>
-            <artifactId>cas-server-support-jdbc</artifactId>
-            <version>${cas.version}</version>
-            <type>jar</type>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jasig.cas</groupId>
-            <artifactId>cas-server-support-ldap</artifactId>
-            <version>${cas.version}</version>
-            <type>jar</type>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>${commons-dbcp.version}</version>
-            <exclusions>
                 <exclusion>
-                    <groupId>commons-collections</groupId>
-                    <artifactId>commons-collections</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>xml-apis</groupId>
-                    <artifactId>xml-apis</artifactId>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>xerces</groupId>
@@ -117,61 +90,5 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-configuration</groupId>
-            <artifactId>commons-configuration</artifactId>
-            <version>${commons-configuration.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>${commons-beanutils.version}</version>
-        </dependency>
     </dependencies>
-
-    <build>
-        <finalName>authentication-service-internal-${project.version}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <overlays>
-                        <overlay>
-                            <groupId>org.jasig.cas</groupId>
-                            <artifactId>cas-server-webapp</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/aspectj*.jar</exclude>
-                                <exclude>WEB-INF/lib/commons-lang*.jar</exclude>
-                                <exclude>WEB-INF/lib/jaxb-impl-*.jar</exclude>
-                                <exclude>WEB-INF/lib/jcl-over-slf4j-*.jar</exclude>
-                                <exclude>WEB-INF/lib/commons-io-*.jar</exclude>
-                                <exclude>WEB-INF/lib/jta-*.jar</exclude>
-                                <exclude>WEB-INF/lib/slf4j-api-*.jar</exclude>
-                                <exclude>WEB-INF/lib/slf4j-log4j12-*.jar</exclude>
-                                <exclude>WEB-INF/lib/log4j-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-aop-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-asm-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-beans-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-context-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-core-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-expression-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-jdbc-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-ldap-core-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-orm-*.jar</exclude>
-                                <exclude>WEB-INF/lib/spring-tx-*.jar</exclude>
-                            </excludes>
-                        </overlay>
-                    </overlays>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
