@@ -18,7 +18,7 @@ import org.springframework.core.io.ClassPathResource;
 @Configuration
 public class CommonMetadataPropertySourceBootstrapConfiguration implements PropertySourceLocator {
 
-    Logger LOGGER = LoggerFactory.getLogger(CommonMetadataPropertySourceBootstrapConfiguration.class);
+    final static Logger LOGGER = LoggerFactory.getLogger(CommonMetadataPropertySourceBootstrapConfiguration.class);
 
     @Bean("configurationService")
     public ConfigurationServiceImpl configurationService() {
@@ -40,7 +40,7 @@ public class CommonMetadataPropertySourceBootstrapConfiguration implements Prope
                 try {
                     decodeProperties.setProperty(key, MetamacEncryptor.decrypt(properties.getProperty(key)));
                 } catch (Exception e) {
-                    LOGGER.error("An error has ocurred decrypting password property: " + key);
+                    LOGGER.error("An error has ocurred decrypting password property: " + key, e);
                     decodeProperties.setProperty(key, StringUtils.EMPTY);
                 }
             } else {
