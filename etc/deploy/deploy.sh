@@ -37,7 +37,7 @@ ssh deploy@estadisticas.arte-consultores.com <<EOF
 
     # Restore Configuration
     sudo cp $HOME_PATH/environment.xml $DEPLOY_TARGET_PATH/authentication-service-internal/$ENVIRONMENT_RELATIVE_PATH_FILE
-    sudo cp $HOME_PATH/log4j.xml $DEPLOY_TARGET_PATH/authentication-service-internal/$LOGBACK_RELATIVE_PATH_FILE
+    sudo cp $HOME_PATH/log4j2.xml $DEPLOY_TARGET_PATH/authentication-service-internal/$LOGBACK_RELATIVE_PATH_FILE
 
     if [ $RESTART -eq 1 ]; then
         sudo chown -R metamac.metamac /servers/metamac
