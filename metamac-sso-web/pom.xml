@@ -17,13 +17,13 @@
     <packaging>war</packaging>
 
     <build>
+        <finalName>authentication-service-internal-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <warName>cas</warName>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <recompressZippedFiles>false</recompressZippedFiles>
                     <archive>
@@ -43,7 +43,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>authentication-service-internal-${project.version}</finalName>
     </build>
 
     <dependencies>
