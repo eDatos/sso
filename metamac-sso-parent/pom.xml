@@ -22,7 +22,6 @@
 
     <properties>
         <metamac-core-common.version>5.5.0</metamac-core-common.version>
-        <commons-dbcp.version>1.4</commons-dbcp.version>
     </properties>
         
     <dependencyManagement>
@@ -31,6 +30,13 @@
                 <groupId>org.apereo.cas</groupId>
                 <artifactId>cas-server-support-bom</artifactId>
                 <version>${cas.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.siemac.metamac</groupId>
+                <artifactId>metamac-core-common</artifactId>
+                <version>${metamac-core-common.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
