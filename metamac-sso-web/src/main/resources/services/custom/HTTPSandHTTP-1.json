@@ -16,6 +16,10 @@
   },
   "accessStrategy" : {
     "@class" : "org.jasig.cas.services.DefaultRegisteredServiceAccessStrategy",
+    "delegatedAuthenticationPolicy" : {
+      "@class" : "org.apereo.cas.services.DefaultRegisteredServiceDelegatedAuthenticationPolicy",
+      "allowedProviders" : [ "java.util.ArrayList", [ "CAS Delegado" ] ]
+    },
     "enabled" : true,
     "ssoEnabled" : true
   }
