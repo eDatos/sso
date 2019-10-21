@@ -3,6 +3,10 @@
 cas.server.name: metamac-sso-web
 cas.server.prefix: ${metamac.security.cas_server_url_prefix}
 
+# Redirigimos contra el logout del CAS delegado para finalizar el logout
+cas.logout.redirectUrl: ${metamac.security.delegated.logout_url}
+
+
 # Registro de servicios
 # https://apereo.github.io/cas/5.3.x/installation/AutoInitialization-Service-Management.html#service-registry-initialization
 cas.serviceRegistry.json.location: classpath:/services/custom
