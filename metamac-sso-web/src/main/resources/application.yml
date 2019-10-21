@@ -27,7 +27,7 @@ cas.authn.attributeRepository.jdbc[0].dialect: ${metamac.security.datasource.dia
 # https://apereo.github.io/cas/5.3.x/integration/Delegate-Authentication.html
 cas.authn.pac4j.cas[0].loginUrl: ${metamac.security.delegated.login_url}
 cas.authn.pac4j.cas[0].autoRedirect: true
-cas.authn.pac4j.cas[0].clientName: CAS Delegado
+cas.authn.pac4j.cas[0].clientName: DELEGATED_CAS
 
 # Desactivados los usuarios estaticos
 # https://apereo.github.io/cas/5.3.x/installation/Configuration-Properties.html#accept-users-authentication
