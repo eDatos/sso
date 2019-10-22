@@ -18,7 +18,7 @@
     "@class" : "org.jasig.cas.services.DefaultRegisteredServiceAccessStrategy",
     "delegatedAuthenticationPolicy" : {
       "@class" : "org.apereo.cas.services.DefaultRegisteredServiceDelegatedAuthenticationPolicy",
-      "allowedProviders" : [ "java.util.ArrayList", [ "CAS Delegado" ] ]
+      "allowedProviders" : [ "java.util.ArrayList", [ "DELEGATED_CAS" ] ]
     },
     "enabled" : true,
     "ssoEnabled" : true
