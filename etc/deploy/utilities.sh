@@ -20,7 +20,6 @@ checkURL() {
         I=$(( I + 1 ))
         if [  $I -gt $MAXR ]; then
             error "Timeout reached, $NAME not started properly ..."
-            # TODO: Send error by e-mail
             break;
         fi
         RESPONSE=`curl -sL -w "%{http_code}" "$URL" -o /dev/null`
