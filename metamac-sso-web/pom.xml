@@ -63,6 +63,11 @@
             <artifactId>cas-server-support-json-service-registry</artifactId>
         </dependency>
         
+        <!-- Not really used, used for handling warning https://groups.google.com/a/apereo.org/forum/#!msg/cas-user/X9WBKzcrwiA/1e_YclaLCAAJ -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-rest</artifactId>
+        </dependency>
         
         <!-- Ticket Validation with SAML -->
         <dependency>
