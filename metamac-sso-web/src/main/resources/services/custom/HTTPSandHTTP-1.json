@@ -22,5 +22,12 @@
     },
     "enabled" : true,
     "ssoEnabled" : true
+  },
+  "properties" : {
+    "@class" : "java.util.HashMap",
+    "httpHeaderEnableStrictTransportSecurity" : {
+      "@class" : "org.apereo.cas.services.DefaultRegisteredServiceProperty",
+      "values" : [ "java.util.HashSet", [ "false" ] ]
+    }
   }
 }
