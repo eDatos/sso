@@ -29,6 +29,11 @@ cas.authn.pac4j.cas[0].loginUrl: ${metamac.security.delegated.login_url}
 cas.authn.pac4j.cas[0].autoRedirect: true
 cas.authn.pac4j.cas[0].clientName: DELEGATED_CAS
 
+# Control de cabeceras
+# https://apereo.github.io/cas/5.3.x/planning/Security-Guide.html#security-response-headers
+# Se desactiva HSTS porque hay otras aplicaciones en el dominio que han de soportar HTTP
+cas.httpWebRequest.header.hsts: false
+
 # Desactivados los usuarios estaticos
 # https://apereo.github.io/cas/5.3.x/installation/Configuration-Properties.html#accept-users-authentication
 cas.authn.accept.users: 
