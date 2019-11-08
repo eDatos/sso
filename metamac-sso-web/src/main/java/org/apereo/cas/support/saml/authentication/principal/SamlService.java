@@ -5,14 +5,12 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 import org.apereo.cas.authentication.principal.AbstractWebApplicationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Class to represent that this service wants to use SAML. We use this in
@@ -25,19 +23,21 @@ import lombok.extern.slf4j.Slf4j;
 @Entity
 @DiscriminatorValue("saml")
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Slf4j
-@Getter
-@NoArgsConstructor
 public class SamlService extends AbstractWebApplicationService {
 
-    /**
-     * Unique Id for serialization.
-     */
+    private static final Logger LOGGER           = LoggerFactory.getLogger(SamlService.class);
+
     private static final long serialVersionUID = -6867572626767140223L;
+
+    public SamlService() {
+    }
 
     @Column
     private String            requestId;
 
+    public String getRequestId() {
+        return requestId;
+    }
     /**
      * Instantiates a new SAML service.
      *
