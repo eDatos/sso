@@ -75,6 +75,12 @@
           <artifactId>cas-server-support-saml</artifactId>          
         </dependency>
         
+        <!--  For overriding SamlService -->
+        <dependency>
+          <groupId>org.apereo.cas</groupId>
+          <artifactId>cas-server-core-services-authentication</artifactId>          
+        </dependency>
+        
         <!-- Common Metadata configuration properties -->
         <dependency>
             <groupId>org.siemac.metamac</groupId>

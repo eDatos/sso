@@ -1,10 +1,14 @@
 package org.apereo.cas.support.saml.authentication.principal;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 import org.apereo.cas.authentication.principal.AbstractWebApplicationService;
+import org.apereo.cas.authentication.principal.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,16 +31,34 @@ public class SamlService extends AbstractWebApplicationService {
 
     private static final Logger LOGGER           = LoggerFactory.getLogger(SamlService.class);
 
-    private static final long serialVersionUID = -6867572626767140223L;
+    private static final long   serialVersionUID = -6867572626767140223L;
 
     public SamlService() {
     }
 
     @Column
-    private String            requestId;
+    private String requestId;
 
     public String getRequestId() {
         return requestId;
+    }
+
+    @Override
+    public boolean matches(Service service) {
+        try {
+            final String thisUrl = URLDecoder.decode(getId(), StandardCharsets.UTF_8.name());
+            final String serviceUrl = URLDecoder.decode(service.getId(), StandardCharsets.UTF_8.name());
+            LOGGER.trace("Decoded urls and comparing [{}] with [{}]", thisUrl, serviceUrl);
+
+            final String thisUrlWithoutHash = thisUrl.substring(0, thisUrl.indexOf('#'));
+            final String serviceUrlWithoutHash = serviceUrl.substring(0, thisUrl.indexOf('#'));
+            LOGGER.trace("Decoded urls withouth hash (#) and comparing [{}] with [{}]", thisUrl, serviceUrl);
+
+            return thisUrlWithoutHash.equalsIgnoreCase(serviceUrlWithoutHash);
+        } catch (final Exception e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return false;
     }
     /**
      * Instantiates a new SAML service.
