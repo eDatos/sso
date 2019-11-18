@@ -38,6 +38,8 @@ cas.httpWebRequest.header.hsts: false
 # https://apereo.github.io/cas/5.3.x/installation/Configuration-Properties.html#accept-users-authentication
 cas.authn.accept.users: 
 
-# Tiempo de expiraci�n del ticket
+# Tiempos de expiración de tickets
 # https://apereo.github.io/cas/5.0.x/installation/Configuration-Properties.html#service-ticket
-cas.ticket.st.timeToKillInSeconds: 60
+cas.ticket.st.timeToKillInSeconds: 60 
+# https://apereo.github.io/cas/5.3.x/installation/Configuration-Properties.html#transient-session-tickets-behavior
+cas.ticket.tst.timeToKillInSeconds: 900
