@@ -40,6 +40,6 @@ cas.authn.accept.users:
 
 # Tiempos de expiración de tickets
 # https://apereo.github.io/cas/5.0.x/installation/Configuration-Properties.html#service-ticket
-cas.ticket.st.timeToKillInSeconds: 60 
+cas.ticket.st.timeToKillInSeconds: 600 
 # https://apereo.github.io/cas/5.3.x/installation/Configuration-Properties.html#transient-session-tickets-behavior
 cas.ticket.tst.timeToKillInSeconds: 900
