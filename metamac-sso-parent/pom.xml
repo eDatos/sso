@@ -21,7 +21,7 @@
     </issueManagement>
 
     <properties>
-        <metamac-core-common.version>5.5.1-SNAPSHOT</metamac-core-common.version>
+        <metamac-core-common.version>5.5.1</metamac-core-common.version>
     </properties>
         
     <dependencyManagement>
