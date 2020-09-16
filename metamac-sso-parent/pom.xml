@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.siemac.metamac</groupId>
-        <artifactId>metamac-parent</artifactId>
-        <version>3.1.0</version>
-        <relativePath>../metamac-parent/pom.xml</relativePath>
-    </parent>
+	<parent>
+		<groupId>org.siemac.metamac</groupId>
+		<artifactId>metamac-parent</artifactId>
+		<version>3.1.1-SNAPSHOT</version>
+		<relativePath>../metamac-parent/pom.xml</relativePath>
+	</parent>
 
     <groupId>org.siemac.metamac.metamac-sso</groupId>
     <artifactId>metamac-sso-parent</artifactId>
@@ -20,26 +20,26 @@
         <url>http://jira.arte-consultores.com/browse/METAMAC</url>
     </issueManagement>
 
-    <properties>
-        <metamac-core-common.version>5.5.1</metamac-core-common.version>
-    </properties>
-        
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.apereo.cas</groupId>
-                <artifactId>cas-server-support-bom</artifactId>
-                <version>${cas.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.siemac.metamac</groupId>
-                <artifactId>metamac-core-common</artifactId>
-                <version>${metamac-core-common.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+	<properties>
+		<metamac-core-common.version>5.5.2-SNAPSHOT</metamac-core-common.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apereo.cas</groupId>
+				<artifactId>cas-server-support-bom</artifactId>
+				<version>${cas.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.siemac.metamac</groupId>
+				<artifactId>metamac-core-common</artifactId>
+				<version>${metamac-core-common.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
