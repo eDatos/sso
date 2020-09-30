@@ -94,6 +94,18 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+			<groupId>org.siemac.metamac</groupId>
+			<artifactId>edatos-core-utils</artifactId>
+			<version>${edatos-core-utils.version}</version>
+			<classifier>client</classifier>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
         <!-- Core-common non excluded dependencies -->
         <dependency>
             <groupId>commons-configuration</groupId>
