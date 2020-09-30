@@ -22,6 +22,7 @@
 
 	<properties>
 		<metamac-core-common.version>5.5.2-SNAPSHOT</metamac-core-common.version>
+		<edatos-core-utils.version>0.0.1-SNAPSHOT</edatos-core-utils.version>
 	</properties>
 
 	<dependencyManagement>
