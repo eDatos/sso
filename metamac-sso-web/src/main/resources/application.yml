@@ -23,6 +23,11 @@ cas.authn.attributeRepository.jdbc[0].driverClass: ${metamac.security.datasource
 cas.authn.attributeRepository.jdbc[0].url: ${metamac.security.datasource.url}
 cas.authn.attributeRepository.jdbc[0].dialect: ${metamac.security.datasource.dialect}
 
+# Tiempo de expiración de la cache de atributos
+# Estableciendo el valor a 0 no se cachean los atributos y evitamos problemas a la hora de refrescar posibles actualizaciones de roles
+# https://apereo.github.io/cas/5.3.x/installation/Configuration-Properties.html#authentication-attributes
+cas.authn.attributeRepository.expirationTime: 0
+
 # Autenticacion delegada
 # https://apereo.github.io/cas/5.3.x/integration/Delegate-Authentication.html
 cas.authn.pac4j.cas[0].loginUrl: ${metamac.security.delegated.login_url}
