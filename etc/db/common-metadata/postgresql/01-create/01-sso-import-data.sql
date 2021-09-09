@@ -17,7 +17,7 @@ UPDATE TB_SEQUENCES SET SEQUENCE_NEXT_VALUE = SEQUENCE_NEXT_VALUE + 1 WHERE SEQU
 -- Internal properties
 -- -----------------------
     
--- Query ORACLE 
+-- Query PostgreSQL 
 insert into TB_DATA_CONFIGURATIONS (ID,VERSION,SYSTEM_PROPERTY,CONF_KEY,CONF_VALUE,EXTERNALLY_PUBLISHED) values(GET_NEXT_SEQUENCE_VALUE('DATA_CONFIGURATIONS'),1,true,'metamac.security.datasource.query.attributes','
         SELECT usr.username as username, ''ACL'' as acl_name,  concat(app.code, ''#'', rol.code, ''#'',  operations.code) as acl_value
         FROM TB_ACCESS acc
