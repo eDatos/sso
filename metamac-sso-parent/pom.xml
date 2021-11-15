@@ -21,8 +21,8 @@
     </issueManagement>
 
 	<properties>
-		<metamac-core-common.version>6.1.1-SNAPSHOT</metamac-core-common.version>
-		<edatos-core-utils.version>1.4.1-SNAPSHOT</edatos-core-utils.version>
+		<metamac-core-common.version>6.2.0</metamac-core-common.version>
+		<edatos-core-utils.version>1.5.0</edatos-core-utils.version>
 	</properties>
 
 	<dependencyManagement>
