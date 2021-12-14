@@ -54,32 +54,84 @@
         <!-- Delegate authentication -->
         <dependency>
             <groupId>org.apereo.cas</groupId>
-            <artifactId>cas-server-support-pac4j-webflow</artifactId>
+            <artifactId>cas-server-support-pac4j-webflow</artifactId>                    
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>       
         </dependency>
 
         <!-- Service registry -->
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-support-json-service-registry</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         
         <!-- Not really used, used for handling warning https://groups.google.com/a/apereo.org/forum/#!msg/cas-user/X9WBKzcrwiA/1e_YclaLCAAJ -->
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-support-rest</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         
         <!-- Ticket Validation with SAML -->
         <dependency>
           <groupId>org.apereo.cas</groupId>
-          <artifactId>cas-server-support-saml</artifactId>          
+          <artifactId>cas-server-support-saml</artifactId>     
+          <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>     
         </dependency>
         
         <!--  For overriding SamlService -->
         <dependency>
           <groupId>org.apereo.cas</groupId>
-          <artifactId>cas-server-core-services-authentication</artifactId>          
+          <artifactId>cas-server-core-services-authentication</artifactId>  
+          <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>        
         </dependency>
+        
+        <!-- log4j dependency override -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+          <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+          </dependency>
         
         <!-- Common Metadata configuration properties -->
         <dependency>
