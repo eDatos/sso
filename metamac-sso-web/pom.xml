@@ -30,7 +30,10 @@
                     <overlays>
                         <overlay>
                             <groupId>org.apereo.cas</groupId>
-                            <artifactId>cas-server-webapp</artifactId>
+                            <artifactId>cas-server-webapp</artifactId>                            
+                             <excludes>
+                                <exclude>WEB-INF/lib/log4j*</exclude>                                
+                            </excludes>
                         </overlay>
                     </overlays>
                 </configuration>
@@ -55,60 +58,30 @@
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-support-pac4j-webflow</artifactId>                    
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>       
         </dependency>
 
         <!-- Service registry -->
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-support-json-service-registry</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         
         <!-- Not really used, used for handling warning https://groups.google.com/a/apereo.org/forum/#!msg/cas-user/X9WBKzcrwiA/1e_YclaLCAAJ -->
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-support-rest</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         
         <!-- Ticket Validation with SAML -->
         <dependency>
           <groupId>org.apereo.cas</groupId>
-          <artifactId>cas-server-support-saml</artifactId>     
-          <exclusions>
-                <exclusion>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>     
+          <artifactId>cas-server-support-saml</artifactId>       
         </dependency>
         
         <!--  For overriding SamlService -->
         <dependency>
           <groupId>org.apereo.cas</groupId>
-          <artifactId>cas-server-core-services-authentication</artifactId>  
-          <exclusions>
-                <exclusion>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>        
+          <artifactId>cas-server-core-services-authentication</artifactId>         
         </dependency>
         
         <!-- log4j dependency override -->
