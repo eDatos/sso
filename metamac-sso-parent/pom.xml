@@ -11,7 +11,7 @@
 
     <groupId>org.siemac.metamac.metamac-sso</groupId>
     <artifactId>metamac-sso-parent</artifactId>
-    <version>3.0.12</version> 
+    <version>3.0.13-SNAPSHOT</version> 
     <name>SIEMAC :: SSO :: PARENT</name>
     <packaging>pom</packaging>
 
@@ -69,8 +69,4 @@
               </dependency>
 		</dependencies>
 	</dependencyManagement>
-
-  <scm>
-    <tag>20220303-1200-v3.0.12</tag>
-  </scm>
 </project>
